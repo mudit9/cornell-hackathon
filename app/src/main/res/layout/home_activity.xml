@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/joa2"
+
+        android:text="Third Eye"
+        android:textFontWeight="300"
+        android:paddingBottom="20dp"
+        android:textColor="#0062cc"
+        android:textSize="60dp" />
+
+
+
+
+    <TextView
+        android:id="@+id/textdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make use of your third eye so that you don't lose the first two"
+        android:textColor="#222"
+        android:paddingTop="0dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="50px"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textFieldUserName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:hint="Username">
+        </com.google.android.material.textfield.TextInputEditText>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textFieldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password">
+    </com.google.android.material.textfield.TextInputEditText>
+
+</LinearLayout>
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="30dp"
+        fancy:fb_borderColor="#FFFFFF"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_defaultColor="#FAFAFA"
+        fancy:fb_focusColor="#5577bd"
+
+        fancy:fb_fontIconSize="30sp"
+        fancy:fb_iconPosition="right"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Login"
+        fancy:fb_textColor="#0062cc" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/login"
+        android:layout_marginVertical="20dp"
+        android:src="@drawable/ic_fingerprint_black" />
+
+</LinearLayout>

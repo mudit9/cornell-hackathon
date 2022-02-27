@@ -57,15 +57,15 @@ public abstract class BaseSampleActivity extends AppCompatActivity {
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
 
-            UI.setSummaryForGroups((PreferenceGroup) findPreference(getString(R.string.key_text_preference_group)));
-            UI.setSummaryForGroups((PreferenceGroup) findPreference(getString(R.string.key_additional_preference_group)));
+           // UI.setSummaryForGroups((PreferenceGroup) findPreference(getString(R.string.key_text_preference_group)));
+           // UI.setSummaryForGroups((PreferenceGroup) findPreference(getString(R.string.key_additional_preference_group)));
 
-            UI.setDynamicHeight((ListView) getView().findViewById(android.R.id.list));
+           // UI.setDynamicHeight((ListView) getView().findViewById(android.R.id.list));
         }
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            UI.setSummary(sharedPreferences, findPreference(key));
+            //UI.setSummary(sharedPreferences, findPreference(key));
         }
 
         @Override

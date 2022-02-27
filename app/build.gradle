@@ -3,22 +3,39 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         google()
-        jcenter()
         maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
     buildToolsVersion '28.0.2'
     defaultConfig {
         applicationId 'com.vansuita.pickimage.sample'
-        minSdkVersion 14
-        targetSdkVersion 30
+        minSdkVersion 15
+        targetSdkVersion 29
         versionCode 4
         versionName "1.0"
     }
+    useLibrary 'org.apache.http.legacy'
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
 }
+
 
 dependencies {
     implementation project(':library')
@@ -26,5 +43,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation 'com.android.support:appcompat-v7:+'
     implementation 'com.jrummyapps:colorpicker:2.0.4'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.7.1'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'com.github.medyo:fancybuttons:1.9.1'
+    implementation 'com.github.shem8:material-login:1.4.0'
+    implementation 'com.github.ozodrukh:CircularReveal:2.0.1@aar'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 }
+

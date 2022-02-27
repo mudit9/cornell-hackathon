@@ -1,14 +1,22 @@
 package com.vansuita.pickimage.sample.act;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.content.res.ResourcesCompat;
 
 import com.vansuita.pickimage.bean.PickResult;
 import com.vansuita.pickimage.bundle.PickSetup;
 import com.vansuita.pickimage.dialog.PickImageDialog;
 import com.vansuita.pickimage.listeners.IPickResult;
+import com.vansuita.pickimage.sample.R;
 
 import org.jetbrains.annotations.Nullable;
+
+import java.io.ByteArrayOutputStream;
 
 public class SampleActivity extends BaseSampleActivity implements IPickResult /*, IPickClick */ {
 
@@ -17,6 +25,9 @@ public class SampleActivity extends BaseSampleActivity implements IPickResult /*
         super.onCreate(savedInstanceState);
         /* Set your layout and bind your views here */
         /* ... ... ... */
+        TextView heading = findViewById(R.id.joa2);
+        //heading.setTypeface(ResourcesCompat.getFont(getApplicationContext(), R.font.poppinsmedium));
+
     }
 
     @Override
@@ -65,7 +76,13 @@ public class SampleActivity extends BaseSampleActivity implements IPickResult /*
 
             //If you want the Bitmap.
             getImageView().setImageBitmap(r.getBitmap());
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            r.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
 
+            Intent in1 = new Intent(this, AsyncTaskActivity.class);
+            in1.putExtra("image",byteArray);
+            this.startActivity(in1);
             //r.getPath();
         } else {
             //Handle possible errors
